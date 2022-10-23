@@ -1,0 +1,421 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{textpos}
+\RequirePackage{fontspec}
+\RequirePackage{listingsutf8}
+\RequirePackage{color}
+
+% Settings
+\useinnertheme{af}
+\useoutertheme{af}
+\usecolortheme{af}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded=false, shadow=false]
+
+\def\code#1{\texttt{#1}}
+
+% Custom Frames
+\newenvironment{blackframe}
+{
+  \setbeamercolor{background canvas}{bg=myfinalblue}
+  \setbeamercolor*{frametitle}{fg=white}
+  \settextcolour{white}
+  \setwhitelogofootline{}
+  \begin{frame}[c]
+}
+{
+  \end{frame}
+  \setblacklogofootline
+}
+
+\newenvironment{grayframe}
+{
+  \setbeamercolor{background canvas}{bg=mylightgray}
+  \setbeamercolor*{frametitle}{fg=myblack}
+  \settextcolour{myblack}
+  \setblacklogofootline
+  \begin{frame}[c]
+}
+{
+  \end{frame}
+  \setwhitelogofootline{}
+}
+
+\newenvironment{lgrayrwhiteframe}
+{
+  \setbeamercolor{background canvas}{bg=mylightgray}
+  \setbeamercolor*{frametitle}{fg=myblack}
+  \setbeamertemplate{background}{
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+      \fill[color=mylightgray, opacity=0.4] (0, 0) rectangle (0.57\paperwidth, \the\paperheight);
+      \fill[color=white] (0.47\paperwidth, 0) rectangle (\the\paperwidth, \the\paperheight);
+    \end{tikzpicture}
+  }
+  \setblacklogofootline
+  \begin{frame}[c]
+}
+{
+  \end{frame}
+}
+
+\newenvironment<>{lgrayframerpic}[4][]
+{
+  \setbeamercolor{background canvas}{bg=mylightgray}
+  \setbeamercolor*{frametitle}{fg=myblack}
+  \settextcolour{myblack}
+  \setblacklogofootline
+  \begin{frame}[c]
+    \begin{textblock*}{0.4\paperwidth}(#4\paperwidth,0\paperheight)
+      \includegraphics[height=\paperheight]{img/#1}
+    \end{textblock*}
+    \begin{textblock*}{0.4\paperwidth}(#45\paperwidth,0.97\paperheight)
+      \begin{beamercolorbox}[wd=0.4\paperwidth]{photolicense}
+        \usebeamerfont{photolicense}#2
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+    #3
+}
+{
+  \end{frame}
+  \setwhitelogofootline{}
+}
+
+\newenvironment{lblackrwhiteframe}
+{
+  \setbeamercolor{background canvas}{bg=myblack}
+  \setbeamercolor*{frametitle}{fg=white}
+  \settextcolour{white}
+  \setbeamertemplate{background}{
+  		\begin{tikzpicture}
+  			\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  			\fill[color=white] (0.5\paperwidth, 0) rectangle (\the\paperwidth, \the\paperheight);
+  		\end{tikzpicture}
+  	}
+  \begin{frame}[t]
+}
+{
+  \end{frame}
+}
+
+\newenvironment{2columnsframe}[3]
+{
+  \setbeamercolor*{frametitle}{fg=myblack}
+  \settextcolour{white}
+  \setwhitelogofootline{}
+  \setbeamertemplate{background}{
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+      \fill[color=myblack, opacity=0.8] (0.45\paperwidth, 0) rectangle (\the\paperwidth, 0.49\paperheight);
+      \fill[color=tektonblue, opacity=0.8] (0, 0) rectangle (0.50\paperwidth, 0.49\paperheight);
+      \fill[color=tektonlilac, opacity=0.8] (0, 0.39\paperheight) rectangle (0.50\paperwidth, 0.86\paperheight);
+      \fill[color=tektonred, opacity=0.8] (0.45\paperwidth, 0.39\paperheight) rectangle (\the\paperwidth, 0.86\paperheight);
+    \end{tikzpicture}
+  }
+  \begin{frame}[c]
+    \frametitle{#1}
+    \begin{columns}[T,totalwidth=\textwidth]
+      \column{0.5\textwidth}
+        #2
+      \column{0.5\textwidth}
+        #3
+    \end{columns}
+}
+{
+  \end{frame}
+  \setblacklogofootline
+}
+
+\newenvironment{3squares}[4]
+{
+  \setbeamercolor*{frametitle}{fg=white}
+  \settextcolour{myblack}
+  \setwhitelogofootline{}
+  \setbeamertemplate{background}{
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+      \fill[color=myblack] (0, 0.86\paperheight) rectangle (\the\paperwidth, \the\paperheight);
+      \fill[color=myblack, opacity=0.8] (0.46\paperwidth, 0) rectangle (\the\paperwidth, 0.44\paperheight);
+      \fill[color=myblack, opacity=0.4] (0, 0) rectangle (0.49\paperwidth, 0.44\paperheight);
+      \fill[color=mylightgray, opacity=0.8] (0, 0.39\paperheight) rectangle (0.49\paperwidth, 0.86\paperheight);
+      \fill[color=myblack, opacity=0.4] (0.46\paperwidth, 0.39\paperheight) rectangle (\the\paperwidth, 0.86\paperheight);
+    \end{tikzpicture}
+  }
+  \begin{frame}[c]
+    \frametitle{#1}
+    \begin{columns}[T,totalwidth=\textwidth]
+      \column{0.5\textwidth}
+        #2
+        \settextcolour{white}
+        \vspace{0.05\paperheight}
+        #3
+      \column{0.5\textwidth}
+      \settextcolour{white}
+        #4
+    \end{columns}
+}
+{
+  \end{frame}
+  \setblacklogofootline
+}
+
+\newenvironment{stripedframe}[5]
+{
+  \setbeamercolor*{frametitle}{fg=white}
+  \settextcolour{white}
+  \setwhitelogofootline{}
+  \setbeamertemplate{background}{
+      \begin{tikzpicture}
+        \useasboundingbox (0, 0) rectangle(\the\paperwidth,\the\paperheight);
+        \fill[color=myblack, opacity=0.8] (0, 0) rectangle (0.25\paperwidth, 0.7\paperheight);
+        \fill[color=tektonblue, opacity=0.8] (0.20\paperwidth, 0) rectangle (0.50\paperwidth, 0.7\paperheight);
+        \fill[color=tektonlilac, opacity=0.8] (0.45\paperwidth, 0) rectangle (0.75\paperwidth, 0.7\paperheight);
+        \fill[color=tektonred, opacity=0.8] (0.7\paperwidth, 0) rectangle (\the\paperwidth, 0.7\paperheight);
+        \fill[color=mylightgray] (0, 0.7\paperheight) rectangle (\paperwidth, \paperheight);
+      \end{tikzpicture}
+  	}
+  \begin{frame}[t]
+    \setbeamercolor{normal text}{fg=titlegray}
+    \usebeamercolor[fg]{normal text}
+    \LARGE\centering #1
+    \setbeamercolor{normal text}{fg=white}
+    \usebeamercolor[fg]{normal text}
+    \vspace{0.1\paperheight}
+    \normalsize
+    \begin{columns}[T,totalwidth=0.98\textwidth]
+      \column{0.20\textwidth}
+        #2
+      \column{0.20\textwidth}
+        #3
+      \column{0.20\textwidth}
+        #4
+      \column{0.20\textwidth}
+        #5
+    \end{columns}
+}
+{
+  \end{frame}
+}
+
+% top picture, 4 columns
+\newenvironment{tpicstripedframe}[5]
+{
+  \setbeamercolor*{frametitle}{fg=myblack}
+  \settextcolour{white}
+  \setwhitelogofootline{}
+  \setbeamertemplate{background}{
+      \begin{tikzpicture}
+        \useasboundingbox (0, 0) rectangle(\the\paperwidth,\the\paperheight);
+        \fill[color=myblack, opacity=0.8] (0, 0) rectangle (0.25\paperwidth, 0.52\paperheight);
+        \fill[color=tektonblue, opacity=0.8] (0.20\paperwidth, 0) rectangle (0.50\paperwidth, 0.52\paperheight);
+        \fill[color=tektonlilac, opacity=0.8] (0.45\paperwidth, 0) rectangle (0.75\paperwidth, 0.52\paperheight);
+        \fill[color=tektonred, opacity=0.8] (0.7\paperwidth, 0) rectangle (\the\paperwidth, 0.52\paperheight);
+      \end{tikzpicture}
+  	}
+  \begin{frame}[t]
+    \begin{textblock*}{\paperwidth}(0cm, 0.05\paperheight)
+      \centering
+      \includegraphics[height=0.4\paperheight]{img/#1}
+    \end{textblock*}
+    \vspace{0.45\paperheight}
+    \normalsize
+    \begin{columns}[T,totalwidth=0.98\textwidth]
+      \column{0.20\textwidth}
+        #2
+      \column{0.20\textwidth}
+        #3
+      \column{0.20\textwidth}
+        #4
+      \column{0.20\textwidth}
+        #5
+    \end{columns}
+}
+{
+  \end{frame}
+}
+
+% top black bottom white
+\newenvironment{tblackbgrayframe}[1]
+{
+  \setbeamercolor*{frametitle}{fg=white}
+  \settextcolour{myblack}
+  \setbeamercolor{background canvas}{bg=mylightgray}
+  \setblacklogofootline
+  \setbeamertemplate{background}{
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+      \fill[color=myblack] (0, 0.86\paperheight) rectangle (\the\paperwidth, \the\paperheight);
+    \end{tikzpicture}
+  }
+  \begin{frame}[c]
+    \frametitle{#1}
+}
+{
+  \end{frame}
+}
+
+\newenvironment<>{sectionwithpic}[2][]
+{
+  \begin{frame}[t]
+    \begin{textblock*}{\paperwidth}(0cm,0cm)
+      \includegraphics[width=\paperwidth]{img/#1}
+    \end{textblock*}
+    \begin{textblock*}{\paperwidth}(0.32cm,0.34cm)
+      \begin{beamercolorbox}[wd=0.4\paperwidth]{section page header}
+        \usebeamerfont{section name}\insertsection%
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+    \begin{textblock*}{0.4\paperwidth}(0.005\paperwidth,0.97\paperheight)
+      \begin{beamercolorbox}[wd=0.4\paperwidth]{photolicense}
+        \usebeamerfont{photolicense}#2%
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+}
+{
+  \end{frame}
+}
+
+\newenvironment<>{sectionwithpicrx}[2][]
+{
+  \begin{frame}[t]
+    \begin{textblock*}{\paperwidth}(0cm,0cm)
+      \includegraphics[height=\paperheight]{img/#1}
+    \end{textblock*}
+    \begin{textblock*}{0.4\paperwidth}(0.57\paperwidth,0cm)%
+      \begin{beamercolorbox}[wd=0.4\paperwidth]{section page header}%
+        \usebeamerfont{section name}%
+          \begin{flushright}%
+            \insertsection%
+          \end{flushright}%
+      \end{beamercolorbox}%
+    \end{textblock*}
+    \begin{textblock*}{0.4\paperwidth}(0.005\paperwidth,0.97\paperheight)
+      \begin{beamercolorbox}[wd=0.4\paperwidth]{photolicense}
+        \usebeamerfont{photolicense}#2%
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+}
+{
+  \end{frame}
+}
+
+\newenvironment<>{sectionwithpiclargecentral}[2][]
+{
+  \begin{frame}[t]
+    \begin{textblock*}{\paperwidth}(0cm,0cm)
+      \includegraphics[width=\paperwidth]{img/#1}
+    \end{textblock*}
+    \begin{textblock*}{\paperwidth}(0cm,0.12\paperheight)%
+      \begin{beamercolorbox}[wd=\paperwidth]{section page header}%
+        \usebeamerfont{largecentral}%
+          \centering\insertsection%
+      \end{beamercolorbox}%
+    \end{textblock*}
+    \begin{textblock*}{0.4\paperwidth}(0.005\paperwidth,0.97\paperheight)
+      \begin{beamercolorbox}[wd=0.4\paperwidth]{photolicense}
+        \usebeamerfont{photolicense}#2%
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+}
+{
+  \end{frame}
+}
+
+\newenvironment{lpicrblack}[4][]
+{
+  \setbeamercolor{background canvas}{bg=myblack}
+  \setbeamercolor*{frametitle}{fg=white}
+  \settextcolour{white}
+  \setbeamertemplate{background}{
+    \includegraphics[height=\paperheight]{img/#1}
+  }
+  \setwhitelogofootline{notext}
+  \begin{frame}
+    \begin{textblock*}{0.4\paperwidth}(0.005\paperwidth,0.97\paperheight)
+      \begin{beamercolorbox}[wd=0.4\paperwidth]{photolicense}
+        \usebeamerfont{photolicense}#2%
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+    \ifstrempty{#4}{
+      \leftskip=0.55\paperwidth
+      #3
+    }{
+      \begin{columns}
+        \column{#4\paperwidth}
+        \column{0.48\paperwidth}
+        #3
+      \end{columns}
+    }
+}
+{
+  \end{frame}
+}
+
+% Code listing style
+\newcommand{\setlststyle}{
+  \lstset{ %
+    basicstyle=\ttfamily\tiny\color{myblack},
+    numberstyle=\color{mygray}, % the style that is used for the line-numbers
+    commentstyle=\color{mydarkteal},    % comment style
+    keywordstyle=\color{mydarkblue},% keyword style
+    stringstyle=\color{myblue},     % string literal style
+    identifierstyle=\color{myblack},
+    rulecolor=\color{myblack},      % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    % backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+    breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+    breaklines=true,                 % sets automatic line breaking
+    captionpos=b,                    % sets the caption-position to bottom
+    extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+    keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+    otherkeywords={*,...},           % if you want to add more keywords to the set
+    numbersep=5pt,                   % how far the line-numbers are from the code
+    showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+    showstringspaces=false,          % underline spaces within strings only
+    showtabs=false,                  % show tabs within strings adding particular underscores
+  }
+}
+
+% Code listing style
+\newcommand{\setlststyledark}{
+  \lstset{ %
+    basicstyle=\ttfamily\tiny,
+    numberstyle=\color{mygray}, % the style that is used for the line-numbers
+    commentstyle=\color{mydarkteal},    % comment style
+    keywordstyle=\color{mydarkblue},% keyword style
+    stringstyle=\color{mygray},     % string literal style
+    identifierstyle=\color{white},
+    rulecolor=\color{white},      % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    % backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+    breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+    breaklines=true,                 % sets automatic line breaking
+    captionpos=b,                    % sets the caption-position to bottom
+    extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+    keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+    otherkeywords={*,...},           % if you want to add more keywords to the set
+    numbersep=5pt,                   % how far the line-numbers are from the code
+    showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+    showstringspaces=false,          % underline spaces within strings only
+    showtabs=false,                  % show tabs within strings adding particular underscores
+  }
+}
+
+% Docker listing
+% Source: https://github.com/bartimar/docker-lstlisting
+\lstdefinelanguage{docker}{
+  keywords={FROM, RUN, COPY, ADD, ENTRYPOINT, CMD,  ENV, ARG, WORKDIR, EXPOSE, LABEL, USER, VOLUME, STOPSIGNAL, ONBUILD, MAINTAINER},
+  sensitive=false,
+  comment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\mode<all>

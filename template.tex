@@ -1,0 +1,149 @@
+\documentclass[aspectratio=169,11pt,hyperref={colorlinks=true}]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{listingsutf8}
+\usepackage{listings-golang}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{fontawesome5}
+\usepackage{svg}
+
+
+\title{__TITLE__}
+\date[01 Jan 2021]{01 Jan 2021 | \faTwitter ~@blackchip76 | \faGithub ~afrittoli}
+\author[Andrea Frittoli]{%
+  Andrea Frittoli \\
+  Developer Advocate \\
+  andrea.frittoli@uk.ibm.com \\
+}
+
+\usetheme{af}
+
+% Code style
+\setlststyle
+
+\lstdefinelanguage{koyaml}{
+  keywords={github, com, afrittoli, examples, ms, go, helloworld},
+  sensitive=false,
+  comment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+% Automatic section frame
+% \AtBeginSection{\frame{\sectionpage}}
+
+\begin{document}
+
+\begin{frame}
+\titlepage{}
+\end{frame}
+
+\begin{lpicrblack}[chewy-I-rgDPLKogs-unsplash.jpg]{%
+  Photo by \href{https://unsplash.com/@chewy}{\underline{Chewy}}, CC0
+  }%
+  {%
+  \tableofcontents
+  }%
+  {}
+  \frametitle{Agenda}
+\end{lpicrblack}
+
+\section[Introduction]{Introduction}
+
+\begin{sectionwithpic}[mike-benna-X-NAMq6uP3Q-unsplash.jpg]{Photo by \href{https://unsplash.com/@mbenna}{\underline{Mike Benna}}, CC0}
+\end{sectionwithpic}
+
+\begin{stripedframe}%
+  {%
+  Lorem ipsum dolor sit amet
+  }%
+  {%
+  consectetur adipiscing elit \\
+  \vspace{0.03\textheight}
+  sed do eiusmod tempor incididunt \\
+  \vspace{0.1\textheight}
+  \centering
+  \includesvg[width=0.08\paperwidth]{img/tekton-icon-white.svg}
+  }%
+  {%
+  ut labore et dolore magna aliqua \\
+  \vspace{0.03\textheight}
+  Ut enim ad minim veniam \\
+  \vspace{0.03\textheight}
+  quis nostrud exercitation
+  }%
+  {%
+  \begin{itemize}
+    \item ullamco
+    \item laboris
+  \end{itemize}
+  \vspace{0.01\textheight}
+  \begin{itemize}
+    \item nisi ut aliquip
+    \item ex ea commodo
+    \item consequat
+  \end{itemize}
+  }%
+  {%
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+  }%
+\end{stripedframe}
+
+\begin{lgrayrwhiteframe}
+  \frametitle{Left Gray, Right White}
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{lgrayrwhiteframe}
+
+\section[Section With Pic]{Section With Pic}
+\begin{sectionwithpic}[cat-walking-on-stairs.jpg]{Public domain photo, CC0}
+\end{sectionwithpic}
+
+\begin{lpicrblack}[nadi-whatisdelirium-fZ8uf_L52wg-unsplash.jpg]{%
+  Photo by \href{https://unsplash.com/@whatisdelirium}{\underline{Nadi Whatisdelirium}}, CC0
+  }%
+  {%
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \\
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \\
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \\
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  }%
+  {0.42}%
+  \frametitle{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Left Pic, Right Black}
+\end{lpicrblack}
+
+\begin{lgrayframerpic}[thom-milkovic-FTNGfpYCpGM-unsplash.jpg]{%
+  Photo by \href{https://unsplash.com/@thommilkovic}{\underline{Thom Milkovic}}, CC0
+  }%
+  {%
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  }%
+  {0.48}
+  \frametitle{Left Gray, Right Pic}
+\end{lgrayframerpic}
+
+\begin{2columnsframe}{Experiments \& Dogfooding}%
+  {%
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  }{%
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  }
+\end{2columnsframe}
+
+\section[Section With Pic]{Section With Pic}
+\begin{sectionwithpicrx}[julie_falk_flickr_22258190324_6a583208ae_k.png]{Photo by \href{https://www.flickr.com/photos/piper/}{\underline{Julie Falk}}, CC BY-NC 2.0}
+\end{sectionwithpicrx}
+
+\section[Q\&A]{Thank You! \\Questions?}
+
+\begin{sectionwithpiclargecentral}[carl-jorgensen-5nrnxx_tWe8-unsplash.jpg]{Brecon Beacons, Walse, Photo by \href{https://unsplash.com/@scamartist}{\underline{Carl Jorgensen}}, CC0}
+\end{sectionwithpiclargecentral}
+
+\begin{blackframe}
+  \frametitle{References}
+  A list of references
+\end{blackframe}
+
+\end{document}

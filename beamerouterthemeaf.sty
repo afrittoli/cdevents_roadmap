@@ -1,0 +1,34 @@
+\setbeamertemplate{footline}{%
+  \ifnum \theframenumber=0
+  \else
+    \parbox{0.9\linewidth}{\vspace*{-20pt}\hspace*{10pt}\insertdate}%
+    \parbox{0.1\linewidth}{\vspace*{-20pt}\hspace*{10pt}\insertframenumber/\inserttotalframenumber}%
+    \begin{textblock*}{0.8cm}(0.94\paperwidth,0.82\paperheight)
+      \includegraphics[width=1cm]{img/IBM_rebus_v_rev_white_RGB.png}
+    \end{textblock*}
+  \fi
+}
+
+\newcommand{\setwhitelogofootline}[1]{
+  \setbeamercolor*{footline}{fg=white}
+  \setbeamertemplate{footline}{%
+    \ifx&#1&%
+      \parbox{0.9\linewidth}{\vspace*{-20pt}\hspace*{10pt}\insertdate}%
+      \parbox{0.1\linewidth}{\vspace*{-20pt}\hspace*{10pt}\insertframenumber/\inserttotalframenumber}%
+    \else\fi
+    \begin{textblock*}{0.8cm}(0.94\paperwidth,0.82\paperheight)
+      \includegraphics[width=1cm]{img/IBM_rebus_v_rev_white_RGB.png}
+    \end{textblock*}
+  }
+}
+
+\newcommand{\setblacklogofootline}{
+  \setbeamercolor*{footline}{fg=myblack}
+  \setbeamertemplate{footline}{%
+    \parbox{0.9\linewidth}{\vspace*{-20pt}\hspace*{10pt}\insertdate}%
+    \parbox{0.1\linewidth}{\vspace*{-20pt}\hspace*{10pt}\insertframenumber/\inserttotalframenumber}%
+    \begin{textblock*}{0.8cm}(0.94\paperwidth,0.82\paperheight)
+      \includegraphics[width=1cm]{img/IBM_rebus_v_pos_black_RGB.png}
+    \end{textblock*}
+  }
+}

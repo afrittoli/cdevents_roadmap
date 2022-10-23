@@ -1,0 +1,65 @@
+\mode<presentation>
+
+% Title page
+\defbeamertemplate*{title page}{af}[1][]
+{
+  \begin{textblock*}{\paperwidth}(0.056\paperwidth,0.15\paperheight)
+    \begin{beamercolorbox}[wd=0.5\paperwidth]{title page header}%
+      \usebeamerfont{title}\inserttitle%
+    \end{beamercolorbox}%
+    \vfill
+  \end{textblock*}
+  \begin{textblock*}{\paperwidth}(0.056\paperwidth,0.52\paperheight)
+    \begin{beamercolorbox}[wd=0.5\paperwidth]{title page header}%
+      \usebeamerfont{author}\normalsize\insertauthor\par%
+    \end{beamercolorbox}%
+    \vfill
+  \end{textblock*}
+}
+
+\@namedef{ps@navigation@titlepage}{%
+  \setbeamertemplate{footline}{%
+    \parbox{0.9\linewidth}{\vspace*{-20pt}\hspace*{10pt}\insertdate}%
+    \parbox{0.1\linewidth}{\vspace*{-20pt}\hspace*{70pt}}%
+  }
+  \setbeamertemplate{background}{
+    \includegraphics[width=\paperwidth,height=\paperheight]{img/title.png}
+  }
+  \setbeamercolor*{footline}{fg=black}
+  \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+
+% Section page
+\defbeamertemplate*{section page}{af}[1][]
+{
+  \begin{textblock*}{\paperwidth}(0.32cm,0.34cm)
+    \begin{beamercolorbox}[wd=0.4\paperwidth]{section page header}
+      \usebeamerfont{section name}\insertsection%
+    \end{beamercolorbox}%
+    \vfill
+  \end{textblock*}
+}
+
+\@namedef{ps@navigation@sectionpage}{%
+  \setbeamertemplate{background canvas}{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node [rectangle, top color=mydarkblue, bottom color=mydarkblue!30!tektonblue, shading=axis, shading angle=33.02, anchor=north, minimum width=\paperwidth, minimum height=\paperheight] (box) at (current page.north){};
+    \end{tikzpicture}%
+  }
+  \setbeamercolor*{footline}{fg=white}
+  \setbeamercolor*{section name}{fg=white}
+  \setbeamercolor*{section title}{fg=white}
+  \@nameuse{ps@navigation}}
+\addtobeamertemplate{section page}{\thispagestyle{navigation@sectionpage}}{}
+
+\setbeamertemplate{itemize items}{--}
+\setbeamersize{text margin left=0.32cm,text margin right=0.32cm}
+
+\patchcmd{\beamer@section}{{#2}{\the\c@page}}{{#1}{\the\c@page}}{}{}
+
+\setlength{\leftmargini}{0.03\paperwidth}
+\defbeamertemplate{itemize item}{chevron}{\usebeamerfont*{itemize item}\hbox{\faAngleRight}}
+\setbeamertemplate{items}[chevron]
+
+\mode
+<all>
