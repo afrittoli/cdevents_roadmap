@@ -9,9 +9,9 @@ Run the init.sh script:
 and remove this paragraph.
 Note that "filename" may not include underscore signs.
 
-# __TITLE__
+# CDEvents Roadmap
 
-Talk slides are available in [pdf](__FILE__.pdf).
+Talk slides are available in [pdf](cdevents_roadmap.tex.pdf).
 A [script](demo_script.md) is available for the demo parts.
 
 ## Rebuilding the slides
@@ -24,7 +24,7 @@ Install the IBMPlex font from https://github.com/IBM/plex.
 To build the example just run:
 
 ```shell
-% xelatex __FILE__.tex
+% xelatex cdevents_roadmap.tex.tex
 ```
 
-the output will be [__FILE__.pdf](__FILE__.pdf).
+the output will be [cdevents_roadmap.tex.pdf](cdevents_roadmap.tex.pdf).

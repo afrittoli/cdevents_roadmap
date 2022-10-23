@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-TEX_FILENAME=__FILE__
+TEX_FILENAME=cdevents_roadmap.tex
 
 # Reproducible latex builds
 SOURCE_DATE_EPOCH=0 SOURCE_DATE_EPOCH_TEX_PRIMITIVES=1 xelatex ${TEX_FILENAME}.tex &> /dev/null
