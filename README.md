@@ -1,14 +1,3 @@
-# How to use this template
-
-Run the init.sh script:
-
-```bash
-./init.sh "Presentation Title" filename
-```
-
-and remove this paragraph.
-Note that "filename" may not include underscore signs.
-
 # CDEvents Roadmap
 
 Talk slides are available in [pdf](cdevents_roadmap.tex.pdf).
@@ -27,4 +16,4 @@ To build the example just run:
 % xelatex cdevents_roadmap.tex.tex
 ```
 
-the output will be [cdevents_roadmap.tex.pdf](cdevents_roadmap.tex.pdf).
+the output will be [cdevents\_roadmap.tex.pdf](cdevents_roadmap.tex.pdf).

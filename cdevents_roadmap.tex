@@ -12,11 +12,12 @@
 
 
 \title{CDEvents Roadmap}
-\date[01 Jan 2021]{01 Jan 2021 | \faTwitter ~@blackchip76 | \faGithub ~afrittoli}
+\date[25 Oct 2022]{25 Oct 2022 | \faTwitter ~@blackchip76 | \faGithub ~afrittoli}
 \author[Andrea Frittoli]{%
   Andrea Frittoli \\
-  Developer Advocate \\
+  Developer Advocate @ IBM\\
   andrea.frittoli@uk.ibm.com \\
+  \faTwitter ~@blackchip76 \\
 }
 
 \usetheme{af}
@@ -41,102 +42,118 @@
 \titlepage{}
 \end{frame}
 
-\begin{lpicrblack}[chewy-I-rgDPLKogs-unsplash.jpg]{%
-  Photo by \href{https://unsplash.com/@chewy}{\underline{Chewy}}, CC0
-  }%
-  {%
-  \tableofcontents
-  }%
-  {}
-  \frametitle{Agenda}
-\end{lpicrblack}
+% No table of contents for a lightning talk
+% \begin{lpicrblack}[chewy-I-rgDPLKogs-unsplash.jpg]{%
+%   Photo by \href{https://unsplash.com/@chewy}{\underline{Chewy}}, CC0
+%   }%
+%   {%
+%   \tableofcontents
+%   }%
+%   {}
+%   \frametitle{Agenda}
+% \end{lpicrblack}
 
-\section[Introduction]{Introduction}
-
-\begin{sectionwithpic}[mike-benna-X-NAMq6uP3Q-unsplash.jpg]{Photo by \href{https://unsplash.com/@mbenna}{\underline{Mike Benna}}, CC0}
-\end{sectionwithpic}
-
-\begin{stripedframe}%
-  {%
-  Lorem ipsum dolor sit amet
-  }%
-  {%
-  consectetur adipiscing elit \\
-  \vspace{0.03\textheight}
-  sed do eiusmod tempor incididunt \\
-  \vspace{0.1\textheight}
-  \centering
-  \includesvg[width=0.08\paperwidth]{img/tekton-icon-white.svg}
-  }%
-  {%
-  ut labore et dolore magna aliqua \\
-  \vspace{0.03\textheight}
-  Ut enim ad minim veniam \\
-  \vspace{0.03\textheight}
-  quis nostrud exercitation
-  }%
-  {%
-  \begin{itemize}
-    \item ullamco
-    \item laboris
-  \end{itemize}
-  \vspace{0.01\textheight}
-  \begin{itemize}
-    \item nisi ut aliquip
-    \item ex ea commodo
-    \item consequat
-  \end{itemize}
-  }%
-  {%
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-  }%
-\end{stripedframe}
+\section{CDEvents}
 
 \begin{lgrayrwhiteframe}
-  \frametitle{Left Gray, Right White}
-  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  \frametitle{CDEvents}
+  About CDEvents
+\end{lgrayrwhiteframe}
+\note[itemize]{
+  \item What's CDEvents
+  \item Incubated at CDF since 2022
+}
+
+\begin{lgrayrwhiteframe}
+  \frametitle{Why}
+  Why CDEvents (or events for that matter)
+\end{lgrayrwhiteframe}
+\note[itemize]{
+  \item Two main uses cases:
+    \begin{itemize}
+      \item event driven workflows
+      \item observability of CI/CD pipelines
+    \end{itemize}
+  \item Use a nice diagram here!
+}
+
+\begin{lgrayrwhiteframe}
+  \frametitle{Event Driven Workflows}
+  Event Driven Workflows
+\end{lgrayrwhiteframe}
+\note[itemize]{
+  \item Already used in CI/CD, limited adoption, no standardisation
+  \item Great complexity but greater flexibility too
+    \begin{itemize}
+      \item policy driven workflows
+      \item dynamic workflows
+      \item great for platform teams
+    \end{itemize}
+  \item Perhaps another diagram or a picture
+}
+
+\begin{lgrayrwhiteframe}
+  \frametitle{CI/CD Observability}
+  CI/CD Observability
+\end{lgrayrwhiteframe}
+\note[itemize]{
+  \item Collect data about CI/CD workflows
+  \item DevOps Metrics
+  \item Automate, optimise
+  \item Perhaps another diagram or a picture
+}
+
+\section{Announcement}
+
+\begin{lgrayrwhiteframe}
+  \frametitle{First CDEvents Release}
+  We announce CDEvents Release 0.1 Today!
+\end{lgrayrwhiteframe}
+\note[itemize]{
+  \item Pre-release worked with: 
+    \begin{itemize}
+      \item Tekton, Jenkins, Spinnaker, Keptn
+      \item and several others have expressed interest (Shipwright, Jenkins X)
+    \end{itemize}
+  \item Metrics:
+    \begin{itemize}
+      \item Lead time for change
+      \item Deployment frequency
+    \end{itemize}
+  \item Golang SDK, Python SDK about to be released, Java SDK in progress
+}
+
+\section{Roadmap}
+
+\begin{lgrayrwhiteframe}
+  \frametitle{More DevOps Metrics}
+  Incident Events (complete DORA metrics)
 \end{lgrayrwhiteframe}
 
-\section[Section With Pic]{Section With Pic}
-\begin{sectionwithpic}[cat-walking-on-stairs.jpg]{Public domain photo, CC0}
-\end{sectionwithpic}
+\begin{lgrayrwhiteframe}
+  \frametitle{Supply Chain Security}
+  Expand Build/Artifact Events and Data model for S3C aspects
+    SBOM, Signatures, Attestations
+    Artifact Signed event
+  Signed events?
+\end{lgrayrwhiteframe}
 
-\begin{lpicrblack}[nadi-whatisdelirium-fZ8uf_L52wg-unsplash.jpg]{%
-  Photo by \href{https://unsplash.com/@whatisdelirium}{\underline{Nadi Whatisdelirium}}, CC0
-  }%
-  {%
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \\
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \\
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \\
-  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  }%
-  {0.42}%
-  \frametitle{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Left Pic, Right Black}
-\end{lpicrblack}
+\begin{lgrayrwhiteframe}
+  \frametitle{Richer Data Model}
+  Expand Test Data model for policy driven use cases
+\end{lgrayrwhiteframe}
 
-\begin{lgrayframerpic}[thom-milkovic-FTNGfpYCpGM-unsplash.jpg]{%
-  Photo by \href{https://unsplash.com/@thommilkovic}{\underline{Thom Milkovic}}, CC0
-  }%
-  {%
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  }%
-  {0.48}
-  \frametitle{Left Gray, Right Pic}
-\end{lgrayframerpic}
+\begin{lgrayrwhiteframe}
+  \frametitle{CDEvents in the Wild}
+  \begin{itemize}
+    \item Continue build POCs (Dora, Emil's POC?)
+    \item Work together with SIGs, e.g. interop SIG on terminology
+    \item Work together with Open Source communities to get CDEvents into tools
+    \item Work with vendors and end-users to foster adoption of CDEvents
+  \end{itemize}
+\end{lgrayrwhiteframe}
 
-\begin{2columnsframe}{Experiments \& Dogfooding}%
-  {%
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  }{%
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  }
-\end{2columnsframe}
-
-\section[Section With Pic]{Section With Pic}
-\begin{sectionwithpicrx}[julie_falk_flickr_22258190324_6a583208ae_k.png]{Photo by \href{https://www.flickr.com/photos/piper/}{\underline{Julie Falk}}, CC BY-NC 2.0}
-\end{sectionwithpicrx}
-
-\section[Q\&A]{Thank You! \\Questions?}
+\section[Thank You]{Thank You!}
 
 \begin{sectionwithpiclargecentral}[carl-jorgensen-5nrnxx_tWe8-unsplash.jpg]{Brecon Beacons, Walse, Photo by \href{https://unsplash.com/@scamartist}{\underline{Carl Jorgensen}}, CC0}
 \end{sectionwithpiclargecentral}
