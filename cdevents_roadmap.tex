@@ -12,7 +12,7 @@
 
 
 \title{CDEvents Roadmap}
-\date[25 Oct 2022]{25 Oct 2022 | \faTwitter ~@blackchip76 | \faGithub ~afrittoli}
+\date[25 Oct 2022]{\#CDSummit | Detroit, 25 Oct 2022 | \faTwitter ~@\_cdevents | \faGithub ~cdevents}
 \author[Andrea Frittoli]{%
   Andrea Frittoli \\
   Developer Advocate @ IBM\\
@@ -53,105 +53,142 @@
 %   \frametitle{Agenda}
 % \end{lpicrblack}
 
-\section{CDEvents}
+\begin{speakerframe}[af_wind.jpg]{Andrea Frittoli}%
+  {%
+  \faGithub ~afrittoli | \faLinkedin ~andreafrittoli | \faTwitter ~@blackchip76
+  }%
+  {%
+  \begin{itemize}
+    \item{Open Source Advocate @ IBM}
+    \item{Lives in Wales, enjoys the wind}
+    \item{CDEvents maintainer, Events SIG co-chair}
+    \item{CDF Technical Oversight Committee \\ Governing Board}
+  \end{itemize}
+  }%
+\end{speakerframe}
 
-\begin{lgrayrwhiteframe}
-  \frametitle{CDEvents}
-  About CDEvents
-\end{lgrayrwhiteframe}
+\section[CDEvents]{A common specification for Continuous Delivery events}
+\begin{sectionwithpicmediumcentral}[cdeventscon-gradient-16-9.jpg]{}
+\end{sectionwithpicmediumcentral}
 \note[itemize]{
   \item What's CDEvents
   \item Incubated at CDF since 2022
 }
 
-\begin{lgrayrwhiteframe}
-  \frametitle{Why}
-  Why CDEvents (or events for that matter)
-\end{lgrayrwhiteframe}
+\begin{lpicrblack}[whycdevents]{}%
+  {%
+  \textbf{Interoperability!} \\
+  ~ \\
+  Use Cases:
+  \begin{itemize}
+    \item Event driven workflows
+    \item Observability 
+  \end{itemize}
+  }%
+  {0.3}
+  \frametitle{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Why CDEvents}
+\end{lpicrblack}
 \note[itemize]{
-  \item Two main uses cases:
-    \begin{itemize}
-      \item event driven workflows
-      \item observability of CI/CD pipelines
-    \end{itemize}
-  \item Use a nice diagram here!
+  Event driven workflows
+  \begin{itemize}
+    \item Scalable
+    \item Decoupled
+    \item Flexible
+    \item Policy Driven
+  \end{itemize}
+  Observability of CI/CD pipelines
+  \begin{itemize}
+    \item Metrics
+    \item Notification
+    \item Single View
+  \end{itemize}
 }
 
-\begin{lgrayrwhiteframe}
-  \frametitle{Event Driven Workflows}
-  Event Driven Workflows
-\end{lgrayrwhiteframe}
-\note[itemize]{
-  \item Already used in CI/CD, limited adoption, no standardisation
-  \item Great complexity but greater flexibility too
-    \begin{itemize}
-      \item policy driven workflows
-      \item dynamic workflows
-      \item great for platform teams
-    \end{itemize}
-  \item Perhaps another diagram or a picture
-}
-
-\begin{lgrayrwhiteframe}
-  \frametitle{CI/CD Observability}
-  CI/CD Observability
-\end{lgrayrwhiteframe}
-\note[itemize]{
-  \item Collect data about CI/CD workflows
-  \item DevOps Metrics
-  \item Automate, optimise
-  \item Perhaps another diagram or a picture
-}
 
 \section{Announcement}
+\begin{sectionwithpiclargecentral}[josh-sorenson-MjIMc6uhwrE-unsplash.jpg]{Photo by \href{https://unsplash.com/@joshsorenson}{\underline{Josh Sorenson}}, CC0}
+\end{sectionwithpiclargecentral}
 
-\begin{lgrayrwhiteframe}
-  \frametitle{First CDEvents Release}
-  We announce CDEvents Release 0.1 Today!
-\end{lgrayrwhiteframe}
-\note[itemize]{
-  \item Pre-release worked with: 
-    \begin{itemize}
-      \item Tekton, Jenkins, Spinnaker, Keptn
-      \item and several others have expressed interest (Shipwright, Jenkins X)
-    \end{itemize}
-  \item Metrics:
-    \begin{itemize}
-      \item Lead time for change
-      \item Deployment frequency
-    \end{itemize}
-  \item Golang SDK, Python SDK about to be released, Java SDK in progress
-}
+\begin{tpicstripedframe}%
+  {cdevents-banner.png}
+  {%
+  \large{CDEvents Release 0.1!}
+  }%
+  {%
+  Event Phases:
+  \begin{itemize}
+    \item Orchestration
+    \item Software Configuration Management
+    \item Continuous Integration
+    \item Continuous Deployment
+  \end{itemize}
+  }%
+  {%
+  DevOps Metrics:
+  \begin{itemize}
+    \item Lead Time for Changes
+    \item Deployment Frequency
+  \end{itemize}
+  }%
+  {%
+  SDKs \\
+  \vspace{0.01\textheight}
+  \begin{itemize}
+    \item Go (released)
+    \item Python (soon)
+    \item Java (WIP)
+  \end{itemize}
+  }%
+\end{tpicstripedframe}
 
 \section{Roadmap}
+\begin{sectionwithpiclargecentral}[dimitar-donovski-yrjB4dYWUZU-unsplash.jpg]{Photo by \href{https://unsplash.com/@dmtrdon}{\underline{Dimitar Donovski}}, CC0}
+\end{sectionwithpiclargecentral}
 
-\begin{lgrayrwhiteframe}
-  \frametitle{More DevOps Metrics}
-  Incident Events (complete DORA metrics)
-\end{lgrayrwhiteframe}
-
-\begin{lgrayrwhiteframe}
-  \frametitle{Supply Chain Security}
-  Expand Build/Artifact Events and Data model for S3C aspects
-    SBOM, Signatures, Attestations
-    Artifact Signed event
-  Signed events?
-\end{lgrayrwhiteframe}
-
-\begin{lgrayrwhiteframe}
-  \frametitle{Richer Data Model}
-  Expand Test Data model for policy driven use cases
-\end{lgrayrwhiteframe}
-
-\begin{lgrayrwhiteframe}
-  \frametitle{CDEvents in the Wild}
+\begin{stripedframe}%
+  {%
+  CDEvents Roadmap \\
+  v0.2 and beyond \\
+  ~
+  }%
+  {%
+  Supply Chain Security
   \begin{itemize}
-    \item Continue build POCs (Dora, Emil's POC?)
-    \item Work together with SIGs, e.g. interop SIG on terminology
-    \item Work together with Open Source communities to get CDEvents into tools
-    \item Work with vendors and end-users to foster adoption of CDEvents
+    \item Build and Artifact Data Models
+    \item SBOM, Provenance, Signatures
   \end{itemize}
-\end{lgrayrwhiteframe}
+  \begin{itemize}
+    \item Signed Events
+  \end{itemize}
+  }%
+  {%
+  \begin{itemize}
+    \item DevOps Metrics
+    \item Incident Events
+  \end{itemize}
+  }%
+  {%
+  Reacher Data Model
+  \begin{itemize}
+    \item Test Events
+    \item Policy Driven Workflow
+    \item Compositions
+    \item Links
+  \end{itemize}
+  }%
+  {%
+  Tools communities:
+  \begin{itemize}
+    \item Tekton
+    \item Jenkins
+    \item Spinnaker
+    \item Keptn
+    \item Flux
+    \item Shipwright
+    \item Jenkins X
+  \end{itemize}
+  }%
+\end{stripedframe}
 
 \section[Thank You]{Thank You!}
 
@@ -160,7 +197,18 @@
 
 \begin{blackframe}
   \frametitle{References}
-  A list of references
+  \begin{itemize}
+    \item \href{https://cdevents.dev}{cdevents.dev}
+    \item \href{https://github.com/cdevents/spec/blob/main/CDEvents_Whitepaper.pdf}{github.com/cdevents/spec/blob/main/CDEvents\_Whitepaper.pdf}
+    \item \href{https://github.com/cdevents/sdk-go}{github.com/cdevents/sdk-go}
+    \item \href{https://github.com/cdevents/sdk-python}{github.com/cdevents/sdk-python}
+    \item \href{https://github.com/cdevents/sdk-java}{github.com/cdevents/sdk-java}
+  \end{itemize}
+  ~ \\
+  Andrea Frittoli \\
+  Developer Advocate @ IBM\\
+  andrea.frittoli@uk.ibm.com \\
+  \faTwitter ~@blackchip76 | \faGithub ~afrittoli | \faLinkedin ~andreafrittoli
 \end{blackframe}
 
 \end{document}

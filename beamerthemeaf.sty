@@ -172,9 +172,9 @@
       \begin{tikzpicture}
         \useasboundingbox (0, 0) rectangle(\the\paperwidth,\the\paperheight);
         \fill[color=myblack, opacity=0.8] (0, 0) rectangle (0.25\paperwidth, 0.7\paperheight);
-        \fill[color=tektonblue, opacity=0.8] (0.20\paperwidth, 0) rectangle (0.50\paperwidth, 0.7\paperheight);
-        \fill[color=tektonlilac, opacity=0.8] (0.45\paperwidth, 0) rectangle (0.75\paperwidth, 0.7\paperheight);
-        \fill[color=tektonred, opacity=0.8] (0.7\paperwidth, 0) rectangle (\the\paperwidth, 0.7\paperheight);
+        \fill[color=cdevents1, opacity=0.8] (0.20\paperwidth, 0) rectangle (0.50\paperwidth, 0.7\paperheight);
+        \fill[color=cdevents2, opacity=0.8] (0.45\paperwidth, 0) rectangle (0.75\paperwidth, 0.7\paperheight);
+        \fill[color=cdevents3, opacity=0.8] (0.7\paperwidth, 0) rectangle (\the\paperwidth, 0.7\paperheight);
         \fill[color=mylightgray] (0, 0.7\paperheight) rectangle (\paperwidth, \paperheight);
       \end{tikzpicture}
   	}
@@ -210,18 +210,18 @@
   \setbeamertemplate{background}{
       \begin{tikzpicture}
         \useasboundingbox (0, 0) rectangle(\the\paperwidth,\the\paperheight);
-        \fill[color=myblack, opacity=0.8] (0, 0) rectangle (0.25\paperwidth, 0.52\paperheight);
-        \fill[color=tektonblue, opacity=0.8] (0.20\paperwidth, 0) rectangle (0.50\paperwidth, 0.52\paperheight);
-        \fill[color=tektonlilac, opacity=0.8] (0.45\paperwidth, 0) rectangle (0.75\paperwidth, 0.52\paperheight);
-        \fill[color=tektonred, opacity=0.8] (0.7\paperwidth, 0) rectangle (\the\paperwidth, 0.52\paperheight);
+        \fill[color=myblack, opacity=0.8] (0, 0) rectangle (0.25\paperwidth, 0.63\paperheight);
+        \fill[color=cdevents1, opacity=0.8] (0.20\paperwidth, 0) rectangle (0.50\paperwidth, 0.63\paperheight);
+        \fill[color=cdevents2, opacity=0.8] (0.45\paperwidth, 0) rectangle (0.75\paperwidth, 0.63\paperheight);
+        \fill[color=cdevents3, opacity=0.8] (0.7\paperwidth, 0) rectangle (\the\paperwidth, 0.63\paperheight);
       \end{tikzpicture}
   	}
   \begin{frame}[t]
     \begin{textblock*}{\paperwidth}(0cm, 0.05\paperheight)
       \centering
-      \includegraphics[height=0.4\paperheight]{img/#1}
+      \includegraphics[height=0.25\paperheight]{img/#1}
     \end{textblock*}
-    \vspace{0.45\paperheight}
+    \vspace{0.35\paperheight}
     \normalsize
     \begin{columns}[T,totalwidth=0.98\textwidth]
       \column{0.20\textwidth}
@@ -329,6 +329,34 @@
   \end{frame}
 }
 
+\newenvironment<>{sectionwithpicmediumcentral}[2][]
+{
+  \begin{frame}[t]
+    \begin{textblock*}{\paperwidth}(0cm,0cm)
+      \includegraphics[width=\paperwidth]{img/#1}
+    \end{textblock*}
+    \begin{textblock*}{0.2\paperwidth}(0.3\paperwidth,0.08\paperheight)
+      \begin{center}
+        \includegraphics[width=0.4\paperwidth]{img/cdevents_horizontal-white.png}
+      \end{center}
+    \end{textblock*}
+    \begin{textblock*}{\paperwidth}(0.1\paperheight,0.45\paperheight)%
+      \begin{beamercolorbox}[wd=0.9\paperwidth]{section page header}%
+        \usebeamerfont{largecentral}%
+          \centering\insertsection%
+      \end{beamercolorbox}%
+    \end{textblock*}
+    \begin{textblock*}{0.4\paperwidth}(0.005\paperwidth,0.97\paperheight)
+      \begin{beamercolorbox}[wd=0.4\paperwidth]{photolicense}
+        \usebeamerfont{photolicense}#2%
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+}
+{
+  \end{frame}
+}
+
 \newenvironment{lpicrblack}[4][]
 {
   \setbeamercolor{background canvas}{bg=myblack}
@@ -355,6 +383,43 @@
         #3
       \end{columns}
     }
+}
+{
+  \end{frame}
+}
+
+% #1 Speaker Pic
+% #2 Speaker name
+% #3 Speaker name subtitle - e.g. social
+% #4 Test in the middle
+\newenvironment<>{speakerframe}[4][]
+{
+  \setwhitefootline{}
+  \setbeamertemplate{background}{
+    \includegraphics[width=\paperwidth,height=\paperheight]{img/cdeventscon-gradient-16-9.jpg}
+  }
+  \settextcolour{white}
+  \begin{frame}[t]
+    \begin{textblock*}{0.45\paperwidth}(0.55\paperwidth,0cm)
+      \includegraphics[width=0.45\paperwidth]{img/#1}
+    \end{textblock*}
+    \begin{textblock*}{\paperwidth}(0.32cm,0.34cm)
+      \begin{beamercolorbox}[wd=\paperwidth]{section page header}
+        \usebeamerfont{largeauthor}#2%
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+    \begin{textblock*}{\paperwidth}(0.32cm,0.18\paperheight)
+      \begin{beamercolorbox}[wd=\paperwidth]{section page header}
+        \usebeamerfont{smallauthor}#3%
+      \end{beamercolorbox}%
+      \vfill
+    \end{textblock*}
+    \begin{textblock*}{\paperwidth}(0.32cm,0.35\paperheight)
+      \begin{beamercolorbox}[wd=0.7\paperwidth]{section page header}
+        #4%
+      \end{beamercolorbox}%
+    \end{textblock*}
 }
 {
   \end{frame}
