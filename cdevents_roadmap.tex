@@ -11,8 +11,8 @@
 \usepackage{svg}
 
 
-\title{CDEvents Roadmap}
-\date[25 Oct 2022]{\#CDSummit | Detroit, 25 Oct 2022 | \faTwitter ~@\_cdevents | \faGithub ~cdevents}
+\title{CDEvents Project Updates \& Roadmap}
+\date[6 Dec 2022]{CDF TOC Meeting | 6 Dec 2022 | \faTwitter ~@\_cdevents | \faGithub ~cdevents}
 \author[Andrea Frittoli]{%
   Andrea Frittoli \\
   Developer Advocate @ IBM\\
@@ -53,19 +53,19 @@
 %   \frametitle{Agenda}
 % \end{lpicrblack}
 
-\begin{speakerframe}[af_wind.jpg]{Andrea Frittoli}%
-  {%
-  \faGithub ~afrittoli | \faLinkedin ~andreafrittoli | \faTwitter ~@blackchip76
-  }%
-  {%
-  \begin{itemize}
-    \item{Open Source Advocate @ IBM}
-    \item{Lives in Wales, enjoys the wind}
-    \item{CDEvents maintainer, Events SIG co-chair}
-    \item{CDF Technical Oversight Committee \\ Governing Board}
-  \end{itemize}
-  }%
-\end{speakerframe}
+% \begin{speakerframe}[af_wind.jpg]{Andrea Frittoli}%
+%   {%
+%   \faGithub ~afrittoli | \faLinkedin ~andreafrittoli | \faTwitter ~@blackchip76
+%   }%
+%   {%
+%   \begin{itemize}
+%     \item{Open Source Advocate @ IBM}
+%     \item{Lives in Wales, enjoys the wind}
+%     \item{CDEvents maintainer, Events SIG co-chair}
+%     \item{CDF Technical Oversight Committee \\ Governing Board}
+%   \end{itemize}
+%   }%
+% \end{speakerframe}
 
 \section[CDEvents]{A common specification for Continuous Delivery events}
 \begin{sectionwithpicmediumcentral}[cdeventscon-gradient-16-9.jpg]{}
@@ -82,7 +82,17 @@
   Use Cases:
   \begin{itemize}
     \item Event driven workflows
-    \item Observability 
+    \begin{itemize}
+      \item Scalable, Decoupled
+      \item Flexible
+      \item Policy Driven
+    \end{itemize}
+    \item Observability
+    \begin{itemize}
+      \item Metrics
+      \item Notifications
+      \item Single View
+    \end{itemize}
   \end{itemize}
   }%
   {0.3}
@@ -105,7 +115,7 @@
 }
 
 
-\section{Announcement}
+\section{What's New}
 \begin{sectionwithpiclargecentral}[josh-sorenson-MjIMc6uhwrE-unsplash.jpg]{Photo by \href{https://unsplash.com/@joshsorenson}{\underline{Josh Sorenson}}, CC0}
 \end{sectionwithpiclargecentral}
 
@@ -113,6 +123,9 @@
   {cdevents-banner.png}
   {%
   \large{CDEvents Release 0.1!}
+  ~ \\
+  ~ \\
+  Announced at the CDSummit in Detroit
   }%
   {%
   Event Phases:
@@ -141,6 +154,35 @@
   }%
 \end{tpicstripedframe}
 
+\begin{lpicrblack}[benjamin-rascoe-braMiRFMHPk-unsplash]{Photo by \href{https://unsplash.com/@dapperprofessional}{\underline{Benjamin Rascoe}}, CC0}%
+  {%
+  Website refresh
+  \begin{itemize}
+    \item Target Audiences
+    \item Simplified DevEx
+    \item Accessibility 
+  \end{itemize}
+  ~ \\
+  SDKs
+  \begin{itemize}
+    \item Java SDK for v0.1 (Spinnaker, Fidelity)
+  \end{itemize}
+  ~ \\
+  Specification
+  \begin{itemize}
+    \item Incidents \& Remediations
+    \item Connecting events
+  \end{itemize}
+  ~ \\
+  Tools
+  \begin{itemize}
+    \item Spinnaker
+  \end{itemize}
+  }%
+  {0.3}
+  \frametitle{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Working In Progress}
+\end{lpicrblack}
+
 \section{Roadmap}
 \begin{sectionwithpiclargecentral}[dimitar-donovski-yrjB4dYWUZU-unsplash.jpg]{Photo by \href{https://unsplash.com/@dmtrdon}{\underline{Dimitar Donovski}}, CC0}
 \end{sectionwithpiclargecentral}
@@ -154,7 +196,6 @@
   {%
   Supply Chain Security
   \begin{itemize}
-    \item Build and Artifact Data Models
     \item SBOM, Provenance, Signatures
   \end{itemize}
   \begin{itemize}
@@ -162,30 +203,90 @@
   \end{itemize}
   }%
   {%
+  E2E Supply Chain \\
+  ~
   \begin{itemize}
-    \item DevOps Metrics
-    \item Incident Events
+    \item Requirements
+    \item Releases
+    \item Production
+    \item Incidents
+    \item Remediations
   \end{itemize}
   }%
   {%
-  Richer Data Model
+  New features \\
+  ~
   \begin{itemize}
-    \item Test Events
-    \item Policy Driven Workflow
     \item Compositions
-    \item Links
+    \item Links, Workflow IDs
+    \item SDKs
+    \item Policy Driven Workflow
   \end{itemize}
   }%
   {%
-  Tools communities:
+  Data Model \\
+  ~
+  \begin{itemize}
+    \item SCM Events
+    \item Tests
+  \end{itemize}
+  Documentation:
+  \begin{itemize}
+    \item Architecture
+    \item Examples
+  \end{itemize}
+  }%
+\end{stripedframe}
+
+\begin{stripedframe}%
+  {%
+  Community
+  ~ \\
+  ~ \\
+  }%
+  {%
+  CDF \\
+  ~
+  \begin{itemize}
+    \item SIG Interop
+    \item SIG Supply Chain
+    \item SIG Best Practices
+  \end{itemize}
+  }%
+  {%
+  Tools communities \\
+  ~
   \begin{itemize}
     \item Tekton
-    \item Jenkins
     \item Spinnaker
-    \item Keptn
-    \item Flux
     \item Shipwright
+    \item Jenkins
     \item Jenkins X
+    \item Flux, Argo
+  \end{itemize}
+  }%
+  {%
+  Companies \\
+  ~
+  \begin{itemize}
+    \item Ericsson
+    \item IBM / RedHat
+    \item doWhile
+    \item Apple
+    \item VMWare
+    \item Fidelity
+    \item SAS
+  \end{itemize}
+  }%
+  {%
+  Get Involved!! \\
+  ~
+  \begin{itemize}
+    \item Specification
+    \item SDKs (Rust, JS, Ruby, C\#)
+    \item Tools
+    \item Proof-of-concepts
+    \item End users
   \end{itemize}
   }%
 \end{stripedframe}
